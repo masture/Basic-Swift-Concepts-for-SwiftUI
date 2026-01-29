@@ -49,10 +49,6 @@ for i in 0..<terms.count {
 
 print("Introduction to struct")
 
-struct TermDefinition{
-    let term: String
-    let definition: String
-}
 
 let termSwift = TermDefinition(term: "Swift", definition: "A powerful programming language for iOS and macOS development.")
 
@@ -86,4 +82,19 @@ func getDescription(of term: TermDefinition) -> String {
 
 let termDescription = getDescription(of: termSwift) // Reads like English
 print(termDescription)
+
+// Isn't it better to let TermDefinition decide how to describe itself?
+
+struct TermDefinition{
+    let term: String
+    let definition: String
+    
+    func describe() -> String {
+        return "Function describe of TermDefinition: \(term): \(definition)"
+    }
+}
+
+for termDefinition in termDefinitions {
+    termDefinition.describe()
+}
 
