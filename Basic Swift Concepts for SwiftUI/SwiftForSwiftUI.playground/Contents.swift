@@ -24,15 +24,22 @@ print("Introducing Arrays!")
 let terms = [
     "Swift",
     "Constant",
-    "Variable"
+    "Variable",
+    "Arrays",
+    "Struct"
 ]
 
 let definitions: [String] = [
     "A powerful programming language for iOS and macOS development.",
     "A value that cannot be changed after it has been set." ,
-    "A variable can hold different values."
+    "A variable can hold different values.",
+    "Collections of values of the same type."
 ]
 
 for i in 0..<terms.count {
-    print("\(terms[i]): \(definitions[i])")
+    print("Using Array: \(terms[i]): \(definitions[i])")
 }
+
+// What happens when there is a mismatch between the number of elements in the terms and definitions arrays
+
+// ERRRO - Swift/ContiguousArrayBuffer.swift:691: Fatal error: Index out of range
