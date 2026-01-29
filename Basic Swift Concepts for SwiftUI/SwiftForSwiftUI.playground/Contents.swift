@@ -33,7 +33,8 @@ let definitions: [String] = [
     "A powerful programming language for iOS and macOS development.",
     "A value that cannot be changed after it has been set." ,
     "A variable can hold different values.",
-    "Collections of values of the same type."
+    "Collections of values of the same type.",
+    "A type that models a structure with named properties."
 ]
 
 for i in 0..<terms.count {
@@ -43,3 +44,30 @@ for i in 0..<terms.count {
 // What happens when there is a mismatch between the number of elements in the terms and definitions arrays
 
 // ERRRO - Swift/ContiguousArrayBuffer.swift:691: Fatal error: Index out of range
+
+// Introduction to struct
+
+print("Introduction to struct")
+
+struct TermDefinition{
+    let term: String
+    let definition: String
+}
+
+let termSwift = TermDefinition(term: "Swift", definition: "A powerful programming language for iOS and macOS development.")
+
+print("Using Struct: \(termSwift.term): \(termSwift.definition)")
+
+let termDefinitions: [TermDefinition] = [
+    TermDefinition(term: "Swift", definition: "A powerful programming language for iOS and macOS development."),
+    TermDefinition(term: "Constant", definition: "A value that cannot be changed after it has been set."),
+    TermDefinition(term: "Variable", definition: "A variable can hold different values."),
+    TermDefinition(term: "Arrays", definition: "Collections of values of the same type."),
+    TermDefinition(term: "Struct", definition: "A type that models a structure with named properties.")
+]
+
+print("Looping through an array of structs")
+
+for termDefinition in termDefinitions {
+    print("Using Struct: \(termDefinition.term): \(termDefinition.definition)")
+}
