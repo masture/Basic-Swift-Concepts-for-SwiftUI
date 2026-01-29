@@ -71,3 +71,19 @@ print("Looping through an array of structs")
 for termDefinition in termDefinitions {
     print("Using Struct: \(termDefinition.term): \(termDefinition.definition)")
 }
+
+// Functions
+
+func describe(term: TermDefinition) {
+    print("Function describe: \(term.term): \(term.definition)")
+}
+
+describe(term: termSwift)
+
+func getDescription(of term: TermDefinition) -> String {
+    return "Function getDescription: \(term.term): \(term.definition)"
+}
+
+let termDescription = getDescription(of: termSwift) // Reads like English
+print(termDescription)
+
