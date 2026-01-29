@@ -2,14 +2,19 @@ import UIKit
 
 var greeting = "Hello, playground"
 
-let sessionName = "Swift for SwiftUI"
-print(sessionName)
+let term = "Swift"
+var definition = "A powerful programming language for iOS and macOS development."
+print("\(term): \(definition)")
 
-var numberOfParticipants = 50
-print(numberOfParticipants)
+definition = "A versatile language used for building apps across Apple platforms."
+print("MODIFIED: \(term): \(definition)")
 
-// Say 10 more joined
-numberOfParticipants += 10 // this is same as numberOfParticipants = numberOfParticipants + 10
-print(numberOfParticipants)
+let term2 = "Constant"
+var definition2 = "A value that cannot be changed after it has been set."
+print("\(term2): \(definition2)")
 
+let term3 = "Variable"
+var definition3 = "A variable can hold different values."
+print("\(term3): \(definition3)")
 
+// How long can we keep adding new variable for terms and definitions?
