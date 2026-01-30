@@ -88,6 +88,7 @@ print(termDescription)
 struct TermDefinition{
     let term: String
     let definition: String
+    let termColor: String
     
     func describe() -> String {
         return "Function describe of TermDefinition: \(term): \(definition)"
