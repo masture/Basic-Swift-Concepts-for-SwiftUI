@@ -129,7 +129,24 @@ extension TermDefinition: Printable {
     }
 }
 
-for termDefinition in termDefinitions {
-    termDefinition.printDescription()
-    print("Printable Version: \(termDefinition.printableVersion)")
+//for termDefinition in termDefinitions {
+//    termDefinition.printDescription()
+//    print("Printable Version: \(termDefinition.printableVersion)")
+//}
+
+extension TermDefinition {
+    // Method to return a new TermDefinition with specified term color
+    func termColor(color: String) -> TermDefinition {
+        return TermDefinition(term: self.term, definition: self.definition, termColor: color)
+    }
 }
+
+// Initial TermDefinition without color
+let blrTerm = TermDefinition(term: "BLR", definition: "Bengaluru")
+
+blrTerm.printDescription()
+
+// TermDefinition with color using the extension method
+let coloredTerm = blrTerm.termColor(color: "Orange")
+coloredTerm.printDescription()
+
