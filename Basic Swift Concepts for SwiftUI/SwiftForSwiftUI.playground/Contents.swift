@@ -73,7 +73,7 @@ import UIKit
 
 // Introduction to struct
 
-print("Introduction to struct")
+//print("Introduction to struct")
 
 // Isn't it better to let TermDefinition decide how to describe itself?
 
@@ -103,11 +103,33 @@ let termDefinitions: [TermDefinition] = [
     TermDefinition(term: "Constant", definition: "A value that cannot be changed after it has been set."),
     TermDefinition(term: "Variable", definition: "A variable can hold different values."),
     TermDefinition(term: "Arrays", definition: "Collections of values of the same type."),
-    TermDefinition(term: "Struct", definition: "A type that models a structure with named properties.", termColor: "Blue")
+    TermDefinition(term: "Struct", definition: "A type that models a structure with named properties.", termColor: "Blue"),
+    TermDefinition(term: "Protocol", definition: "A blueprint of methods, properties, and other requirements." )
 ]
 
+//
+//for termDefinition in termDefinitions {
+//    print(termDefinition.describe())
+//}
 
-for termDefinition in termDefinitions {
-    print(termDefinition.describe())
+print("Introduction to Protocols")
+
+protocol Printable {
+    func printDescription()
+    var printableVersion: String { get }
 }
 
+extension TermDefinition: Printable {
+    func printDescription() {
+        print("Protocol Printable: \(describe())")
+    }
+    
+    var printableVersion: String {
+        return "\(term): \(definition)"
+    }
+}
+
+for termDefinition in termDefinitions {
+    termDefinition.printDescription()
+    print("Printable Version: \(termDefinition.printableVersion)")
+}
