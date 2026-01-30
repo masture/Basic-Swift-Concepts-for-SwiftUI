@@ -150,3 +150,11 @@ blrTerm.printDescription()
 let coloredTerm = blrTerm.termColor(color: "Orange")
 coloredTerm.printDescription()
 
+
+// Chaining multiple calls to termColor
+let chainedColoredTerm = TermDefinition(term: "NYC", definition: "New York City")
+                            .termColor(color: "Blue")
+                            .termColor(color: "Green")   // These could be different attributes in a real scenario
+                            .termColor(color: "Yellow")
+    
+chainedColoredTerm.printDescription()
