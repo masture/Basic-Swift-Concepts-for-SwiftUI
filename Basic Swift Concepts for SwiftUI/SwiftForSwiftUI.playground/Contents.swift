@@ -95,6 +95,6 @@ struct TermDefinition{
 }
 
 for termDefinition in termDefinitions {
-    termDefinition.describe()
+    print(termDefinition.describe())
 }
 
