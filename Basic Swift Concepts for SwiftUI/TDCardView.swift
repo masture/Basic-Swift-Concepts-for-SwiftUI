@@ -19,6 +19,8 @@ struct TDCardView: View {
             } else {
                 Text(someTerm.definition)
                     .font(.body)
+                    .rotation3DEffect(.degrees(isShowingTerm ? 0 : 180),
+                                      axis: (x: 0, y: 1, z: 0))
             }
         }
         .frame(width: 300, height: 200)
@@ -26,6 +28,8 @@ struct TDCardView: View {
         .background(someTerm.color)
         .cornerRadius(15)
         .shadow(radius: 15)
+        .rotation3DEffect(.degrees(isShowingTerm ? 0 : 180),
+                          axis: (x: 0, y: 1, z: 0))
         .onTapGesture {
             isShowingTerm.toggle()
         }
