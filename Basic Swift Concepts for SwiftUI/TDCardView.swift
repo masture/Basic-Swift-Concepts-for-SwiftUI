@@ -9,21 +9,27 @@ import SwiftUI
 
 struct TDCardView: View {
     let someTerm: TermDefinition
-    
+    @State var isShowingTerm: Bool = true
     var body: some View {
-        VStack (spacing: 30) {
-            Text(someTerm.term)
-                .font(.largeTitle)
-                .bold()
-            
-            Text(someTerm.definition)
-                .font(.body)
+        VStack () {
+            if isShowingTerm {
+                Text(someTerm.term)
+                    .font(.largeTitle)
+                    .bold()
+            } else {
+                Text(someTerm.definition)
+                    .font(.body)
+            }
         }
         .frame(width: 300, height: 200)
         .padding()
         .background(someTerm.color)
         .cornerRadius(15)
         .shadow(radius: 15)
+        .onTapGesture {
+            isShowingTerm.toggle()
+        }
+        .animation(.easeInOut, value: isShowingTerm)
     }
 }
 
