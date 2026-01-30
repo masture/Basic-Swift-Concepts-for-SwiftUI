@@ -20,17 +20,28 @@ struct ContentView: View {
     
     var body: some View {
         VStack (spacing: 20) {
-            Image(systemName: "globe")
+            Image(systemName: "swift")
                 .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+                .foregroundStyle(terms[index].color)
+            Text("Hello, Swift and SwiftUI!")
+                .font(.title)
+                .foregroundStyle(terms[index].color)
+            
+            Spacer()
             
             TDCardView(someTerm: terms[index])
+            
+            Spacer()
             
             Button("Next Term") {
                 index = (index + 1) % (terms.count)
             }
+            .buttonStyle(.borderedProminent)
+            .tint(terms[index].color)
+            
+            Spacer()
         }
+        .animation(.easeInOut(duration: 0.5), value: index)
         .padding()
     }
 }
