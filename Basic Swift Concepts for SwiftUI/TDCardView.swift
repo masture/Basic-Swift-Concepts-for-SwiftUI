@@ -11,11 +11,19 @@ struct TDCardView: View {
     let someTerm = TermDefinition(term: "Variable", definition: "A variable is a named storage that can hold a value which can be changed during program execution.", termColor: "Blue")
     
     var body: some View {
-        VStack {
+        VStack (spacing: 30) {
             Text(someTerm.term)
+                .font(.largeTitle)
+                .bold()
+            
             Text(someTerm.definition)
+                .font(.body)
         }
+        .frame(width: 300, height: 200)
         .padding()
+        .background(someTerm.color)
+        .cornerRadius(15)
+        .shadow(radius: 15)
     }
 }
 
